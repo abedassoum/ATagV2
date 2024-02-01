@@ -9,6 +9,7 @@ public class Main {
         hTag.setText("jeg er et h tag");
 
         System.out.println(hTag);
+        System.out.println("nu er jeg på git");
 
 
 
