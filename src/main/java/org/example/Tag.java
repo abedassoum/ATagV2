@@ -12,7 +12,7 @@ public abstract class Tag {
     private String tagName;
     private String text;
     private List<Tag> children;
-    private String color; //#ff0000 = red
+    private String color = ""; //#ff0000 = red
 
     public Tag() {
         children = new ArrayList<>();
@@ -95,7 +95,12 @@ public abstract class Tag {
 
 
     public String toHtmlString() {
-        String s1 = "<" + tagName + ">";
+        String s1 = "";
+        if (this.getColor().length() > 0) {
+            s1 = "<" + tagName + " style=" + '"' + "background-color:" + color + '"' + ">";
+        } else {
+            s1 = "<" + tagName + ">";
+        }
         for (Tag tag: children) {
             String child = tag.toHtmlString();
             s1 = s1 + (char) 10 + child;

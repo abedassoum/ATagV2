@@ -20,10 +20,12 @@ public class Main {
         for (int i = 19; i>0; i--) {
             HTag hTag2 = new HTag(5-(i % 5));
             hTag2.setText("Jeg er et " + hTag2.getTagName() + " tag");
+            hTag2.setColor(i*4, i*8, i*5);
             hTags.add(hTag2);
             for (int j=1; j<=5; j++) {
                 PTag ptag = new PTag();
                 ptag.setText("Jeg er en ptag indeni " + hTag2.getTagName());
+                ptag.setColor(i+50, i+100, i+200);
                 hTags.add(ptag);
             }
         }
